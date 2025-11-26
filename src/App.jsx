@@ -1,6 +1,7 @@
 
-import './App.css'
-import FirstComponent from'./FirstComponent'
+// import './App.css'
+import FirstComponent from'./components/FirstComponent';
+import List from './components/list';
 
 function App() {
 
@@ -8,8 +9,9 @@ function App() {
   return (
     <>
       <FirstComponent></FirstComponent>
+      <List></List>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
