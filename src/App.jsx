@@ -1,7 +1,7 @@
 
 // import './App.css'
 import FirstComponent from'./components/FirstComponent';
-import List from './components/list';
+import List from './components/List';
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <FirstComponent></FirstComponent>
-      <List></List>
+      {/* <List></List> */}
     </>
   );
 };
