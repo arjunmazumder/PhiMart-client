@@ -1,19 +1,12 @@
-
-// import './App.css'
-
 import './App.css'
-import FirstComponent from'./components/FirstComponent';
-import List from './components/List';
-
+import Skills from './components/Skills';
 
 function App() {
 
 
   return (
     <>
-    <FirstComponent></FirstComponent>
-    <List></List>
-      
+    <Skills></Skills>
     </>
   );
 };
