@@ -39,9 +39,9 @@ const Skills = () => {
                 }
                 
             </ul>
-            {/* <button onClick={addSkill} className="px-3 py-3 text-2xl text-white rounded-sm bg-blue-700">Add Skill</button><br/> */}
-            {/* <button onClick={deleteSkill} className="px-3 py-3 text-2xl text-white rounded-sm bg-blue-700">Delete Skill</button><br /> */}
-            {/* <button onClick={updateSkill} className="px-3 py-3 text-2xl text-white rounded-sm bg-blue-700">Update Skill</button> */}
+            <button onClick={addSkill} className="px-3 py-3 text-2xl text-white rounded-sm bg-blue-700">Add Skill</button><br/>
+            <button onClick={deleteSkill} className="px-3 py-3 text-2xl text-white rounded-sm bg-blue-700">Delete Skill</button><br />
+            <button onClick={updateSkill} className="px-3 py-3 text-2xl text-white rounded-sm bg-blue-700">Update Skill</button>
         </div>
     );
 };

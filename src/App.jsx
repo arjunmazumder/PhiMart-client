@@ -1,13 +1,15 @@
 import './App.css'
-import Skills from './components/Skills';
+import Employee from './components/Employee';
+
 
 function App() {
 
 
   return (
     <>
-    <Skills></Skills>
+    <Employee></Employee>
     </>
+
   );
 };
 
