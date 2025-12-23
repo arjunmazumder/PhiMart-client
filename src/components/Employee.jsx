@@ -3,7 +3,10 @@ import { useState } from "react";
 const Employee = () => {
     const employeeArray = [
         {name: 'Sithi', age: 15},
-        {name: 'Arjun', age: 24}
+        {name: 'Arjun', age: 24},
+        {name: 'Sithika', age: 16},
+        {name: 'pushpita', age: 18},
+        {name: 'fikifiki', age:70}
     ];
 
     const [employee, setEmployee] = useState(employeeArray);
