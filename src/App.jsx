@@ -1,6 +1,7 @@
 
 import './App.css';
-import Effect from './components/Effect';
+
+import CartAdd from './cart/CartAdd';
 
 
 
@@ -9,9 +10,7 @@ function App() {
 
   return (
     <div>
-     <Effect />
-
-    
+      <CartAdd></CartAdd>
     </div>
 
   );
