@@ -1,21 +1,36 @@
 import { Trash2 } from "lucide-react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 
 const CartAdd = () => {
 
     const {register, handleSubmit} = useForm();
+    const [cart, setCart] = useState([])
     const addItem = (data) =>{
-        console.log(data)
+        const existingItem = cart.find((item) => item.name === data.name)
+        if(existingItem){
+            setCart(
+                cart.map(
+                    (item) => item.name === data.name?{
+                        ... item, quantity: item.quantity +1
+                    }:item
+
+                )
+            )
+
+        }else{
+                setCart(
+                [... cart, {name: data.name, price: data.price, quantity: 1}]
+            )
+
+        }
+        
         
 
     };
 
-    const cart = [
-        {name: 'LapTop', price: 35000},
-        {name: 'mobile phone', price: 54000},
-        {name: 'wathch', price: 1500}
-    ]
+    
 
     return (
         <div className="w-2/3 mx-auto bg-gray-100 rounded-lg p-6 shadow-md mt-10">
@@ -35,10 +50,10 @@ const CartAdd = () => {
                         cart.map(item =>(
                             <div key={item.name} className="flex justify-between items-center p-2 bg-white rounded mb-2">
                                 <p className="font-semibold">{item.name}</p>
-                                <p className="text-sm text-gray-600">{item.price}</p>
+                                <p className="text-sm text-gray-600">{(item.price * item.quantity).toFixed(2)}</p>
                                 <div className="flex items-center">
                                     <button className="bg-red-500 text-white font-bold px-2 py-1 rounded">-</button>
-                                    <p className="mx-2 font-bold">1</p>
+                                    <p className="mx-2 font-bold">{item.quantity}</p>
                                     <button className="bg-green-500 text-white font-bold px-2 py-1 rounded">+</button>
                                 </div>
                                 <button><Trash2 /></button>
