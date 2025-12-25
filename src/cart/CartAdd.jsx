@@ -51,6 +51,8 @@ const CartAdd = () => {
                     ... item , quantity: item.quantity -1
 
                 } : item
+            ).filter(
+                (item) => item.quantity > 0
             )
         )
     }
