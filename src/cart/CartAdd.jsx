@@ -67,6 +67,13 @@ const CartAdd = () => {
         )
     }
 
+
+    // Calculate total Price
+
+    const totalPrice = cart.reduce(
+    (total, item) => total + item.price * item.quantity,0);
+
+
     
 
     return (
@@ -107,7 +114,7 @@ const CartAdd = () => {
             {/* Total Price */}
 
             <div className="mt-4 font-bold text-lg">
-                Total Price : 15422589
+                Total Price : {totalPrice}
             </div>
 
 
