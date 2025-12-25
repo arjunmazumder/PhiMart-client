@@ -42,6 +42,19 @@ const CartAdd = () => {
 
     }
 
+    // Decrease Quantity
+
+    const decreaseQuantity = (name) =>{
+        setCart(
+            cart.map(
+                (item) => item.name === name ? {
+                    ... item , quantity: item.quantity -1
+
+                } : item
+            )
+        )
+    }
+
     
 
     return (
@@ -64,7 +77,7 @@ const CartAdd = () => {
                                 <p className="font-semibold">{item.name}</p>
                                 <p className="text-sm text-gray-600">{(item.price * item.quantity).toFixed(2)}</p>
                                 <div className="flex items-center">
-                                    <button className="bg-red-500 text-white font-bold px-2 py-1 rounded">-</button>
+                                    <button onClick={() => decreaseQuantity(item.name)} className="bg-red-500 text-white font-bold px-2 py-1 rounded">-</button>
                                     <p className="mx-2 font-bold">{item.quantity}</p>
                                     <button onClick={() => increaseQuantity(item.name) } className="bg-green-500 text-white font-bold px-2 py-1 rounded">+</button>
                                 </div>
