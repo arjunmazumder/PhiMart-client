@@ -55,6 +55,16 @@ const CartAdd = () => {
         )
     }
 
+    // Delete Item 
+
+    const deleteItem = (name) => {
+        setCart(
+            cart.filter(
+                (item) => item.name !== name
+            )
+        )
+    }
+
     
 
     return (
@@ -81,7 +91,7 @@ const CartAdd = () => {
                                     <p className="mx-2 font-bold">{item.quantity}</p>
                                     <button onClick={() => increaseQuantity(item.name) } className="bg-green-500 text-white font-bold px-2 py-1 rounded">+</button>
                                 </div>
-                                <button><Trash2 /></button>
+                                <button onClick={() => deleteItem(item.name)}><Trash2 /></button>
                             </div>
 
                         ))
