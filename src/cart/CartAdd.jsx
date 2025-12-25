@@ -1,6 +1,6 @@
 import { Trash2 } from "lucide-react";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 
 
 const CartAdd = () => {
@@ -30,6 +30,18 @@ const CartAdd = () => {
 
     };
 
+    // Increase Quantity
+    const increaseQuantity =(name) => {
+        setCart(
+            cart.map(
+                (item) => item.name === name? {
+                    ... item, quantity: item.quantity + 1
+                } : item
+            )
+        )
+
+    }
+
     
 
     return (
@@ -54,7 +66,7 @@ const CartAdd = () => {
                                 <div className="flex items-center">
                                     <button className="bg-red-500 text-white font-bold px-2 py-1 rounded">-</button>
                                     <p className="mx-2 font-bold">{item.quantity}</p>
-                                    <button className="bg-green-500 text-white font-bold px-2 py-1 rounded">+</button>
+                                    <button onClick={() => increaseQuantity(item.name) } className="bg-green-500 text-white font-bold px-2 py-1 rounded">+</button>
                                 </div>
                                 <button><Trash2 /></button>
                             </div>
