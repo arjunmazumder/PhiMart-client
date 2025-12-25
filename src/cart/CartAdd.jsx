@@ -114,7 +114,7 @@ const CartAdd = () => {
             {/* Total Price */}
 
             <div className="mt-4 font-bold text-lg">
-                Total Price : {totalPrice}
+                Total Price : {totalPrice.toFixed(2)}
             </div>
 
 
